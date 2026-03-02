@@ -1,0 +1,106 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0f0a;
+  --bg2: #111811;
+  --bg3: #161f16;
+  --accent: #16a34a;
+  --accent2: #22c55e;
+  --gold: #f59e0b;
+  --text: #f0f5f0;
+  --muted: #9ca3af;
+  --border: rgba(255,255,255,0.08);
+}
+
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+a { text-decoration: none; }
+
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; position: sticky; top: 0; z-index: 100; background: rgba(10,15,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.logo { font-weight: 800; font-size: 1.3rem; }
+.nav-cta { background: var(--accent); color: white; padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; }
+
+.hero { text-align: center; padding: 6rem 5% 4rem; }
+.hero-badge { display: inline-block; background: rgba(22,163,74,0.15); border: 1px solid rgba(22,163,74,0.4); color: var(--accent2); padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 2rem; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+.gradient { background: linear-gradient(135deg, #16a34a, #22c55e, #84cc16); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.7; }
+.hero-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; padding: 0.9rem 2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 20px rgba(22,163,74,0.4); transition: transform 0.2s; }
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--text); padding: 0.9rem 2rem; border-radius: 10px; font-weight: 600; font-size: 1rem; border: 1px solid var(--border); }
+.btn-large { font-size: 1.2rem; padding: 1.1rem 2.5rem; }
+.hero-proof { font-size: 0.9rem; color: var(--muted); margin-bottom: 3rem; }
+.hero-image-wrap { position: relative; max-width: 900px; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+.hero-img { width: 100%; height: 400px; object-fit: cover; }
+.hero-img-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, var(--bg)); }
+
+.proof-bar { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2rem 5%; }
+.proof-items { display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.proof-item { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+.proof-num { font-size: 2rem; font-weight: 900; color: var(--accent2); }
+.proof-label { font-size: 0.85rem; color: var(--muted); }
+.proof-divider { width: 1px; height: 40px; background: var(--border); }
+
+.problem { padding: 6rem 5%; text-align: center; }
+.problem h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 3rem; }
+.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+.problem-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: left; }
+.prob-icon { font-size: 2rem; display: block; margin-bottom: 0.8rem; }
+.problem-card h3 { margin-bottom: 0.5rem; font-size: 1rem; }
+.problem-card p { color: var(--muted); line-height: 1.6; font-size: 0.9rem; }
+
+.what { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 6rem 5%; max-width: 1100px; margin: 0 auto; }
+.what h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
+.what p { color: var(--muted); margin-bottom: 2rem; line-height: 1.7; }
+.feature-list { list-style: none; margin-bottom: 2.5rem; }
+.feature-list li { padding: 0.6rem 0; color: var(--muted); border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+.feature-list li strong { color: var(--text); }
+.what-image img { width: 100%; border-radius: 16px; border: 1px solid var(--border); height: 400px; object-fit: cover; }
+
+.examples { padding: 6rem 5%; text-align: center; background: var(--bg2); }
+.examples h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+.examples-sub { color: var(--muted); margin-bottom: 3rem; }
+.example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; text-align: left; }
+.example-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+.example-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent2); margin-bottom: 0.8rem; }
+.example-prompt { font-size: 0.85rem; color: var(--muted); background: rgba(255,255,255,0.04); padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem; font-style: italic; }
+.example-output { font-size: 0.9rem; line-height: 1.7; color: var(--text); }
+
+.testimonials { padding: 6rem 5%; text-align: center; }
+.testimonials h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 3rem; }
+.testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+.testi-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: left; }
+.testi-card p { color: var(--muted); line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
+.testi-author { font-size: 0.9rem; color: var(--text); margin-bottom: 0.5rem; }
+.stars { color: var(--gold); }
+
+.roi { padding: 5rem 5%; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.roi-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+.roi h2 { font-size: 2rem; font-weight: 800; margin-bottom: 2rem; }
+.roi-math { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+.roi-line { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+.roi-line span { color: var(--muted); }
+.roi-line strong { color: var(--text); }
+.roi-line.highlight strong { color: var(--accent2); font-size: 1.1rem; }
+.roi-sub { color: var(--muted); margin-bottom: 2rem; }
+
+.pricing { padding: 6rem 5%; text-align: center; }
+.pricing h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 3rem; }
+.price-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
+.price-card.featured { border-color: var(--accent); box-shadow: 0 0 40px rgba(22,163,74,0.2); }
+.plan-name { font-size: 1rem; font-weight: 600; color: var(--muted); margin-bottom: 0.5rem; }
+.plan-price { font-size: 2.5rem; font-weight: 900; margin-bottom: 0.3rem; }
+.plan-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+.price-card ul { list-style: none; margin-bottom: 2rem; text-align: left; }
+.price-card li { padding: 0.5rem 0; color: var(--muted); font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+.money-back { font-size: 0.8rem; color: var(--muted); margin-top: 0.8rem; }
+
+.final-cta { text-align: center; padding: 8rem 5%; background: radial-gradient(ellipse at center, rgba(22,163,74,0.15) 0%, transparent 70%); }
+.final-cta h2 { font-size: 3rem; font-weight: 900; margin-bottom: 1rem; }
+.final-cta p { color: var(--muted); font-size: 1.1rem; margin-bottom: 2.5rem; line-height: 1.7; }
+
+footer { text-align: center; padding: 3rem 5%; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+footer .logo { margin-bottom: 0.5rem; }
+footer a { color: var(--muted); text-decoration: underline; }
+
+@media (max-width: 768px) { .what { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5rem; } }
